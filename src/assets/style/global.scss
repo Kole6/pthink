@@ -1,0 +1,31 @@
+$wid : 1000px;
+$globalMainColor:#41B2EA;
+$globalMainColor2:#af74ec;
+$globalMainColor3:#f3f7fd;
+
+@mixin gobalBackground {
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 100%;
+}
+
+@mixin gobalWidth {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@mixin pageHeader {
+    padding-top: 30px;
+    text-align: center;
+
+    p:nth-child(1) {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 48px;
+    }
+
+    p:nth-child(2) {
+        font-size: 14px;
+        color: #c1c3d1;
+    }
+}

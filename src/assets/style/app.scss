@@ -1,0 +1,122 @@
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    color: #2c3e50;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media only screen and (max-width: 1230px) {
+    #app {
+        width: 1200px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 6px;
+    background: #bdbdbd;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+    background: -webkit-gradient(linear, left);
+}
+
+::-webkit-scrollbar-track-piece {
+    background: #fff;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+hr {
+    margin: 0
+}
+
+.wy-textCenter {
+    text-align: center;
+}
+
+.wy-textLeft {
+    text-align: left;
+}
+
+.wy-textRight {
+    text-align: right;
+}
+
+.wy-point {
+    cursor: pointer;
+}
+
+.wy-noPoint {
+    cursor: default !important;
+}
+
+.wy-notCopy,
+.iconfont {
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.wy-oneLine {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wy-input input {
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.wy-input input:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.wy-input textarea {
+    resize: none;
+    margin-top: 5px;
+    padding-left: 7px;
+    height: 200px;
+    width: 540px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.wy-input textarea:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 8px rgba(102, 175, 233, 0.6);
+}

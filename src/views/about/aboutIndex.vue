@@ -1,0 +1,180 @@
+<template>
+  <div class="container">
+    <div class="top_index">
+      <p :class="['top_item',activeIndex === index?'active':'']" v-for="(item,index) in categoryData" :key="index" @click="handleScroll(index)">{{item}}</p>
+    </div>
+    <div id="position1"></div>
+    <div class="img">
+      <div class="page-header">
+        <p>公司介绍</p>
+        <p>Company Introduction</p>
+      </div>
+      <img :src="about1" alt>
+    </div>
+    <div id="position2"></div>
+    <div class="img">
+      <div class="page-header">
+        <p>公司资质</p>
+        <p>quality certification</p>
+      </div>
+      <img :src="about2" alt>
+    </div>
+    <div id="position3"></div>
+    <div class="img">
+      <div></div>
+      <!-- <img src="@/assets/img/about/about_1.jpg" alt=""> -->
+      <page3></page3>
+    </div>
+    <div id="position4"></div>
+    <div class="img specialBG">
+      <div class="page-header ">
+        <p>战略大事记</p>
+        <p>We demand not only quantity but also quality</p>
+      </div>
+      <img :src="about4" alt>
+    </div>
+    <div id="position5"></div>
+    <div class="img">
+      <img :src="about5" alt>
+    </div>
+  </div>
+</template>
+<script>
+import page3 from "./aboutPage3.vue";
+import { isDate } from 'util';
+export default {
+  name: "aboutIndex",
+  components: {
+    page3
+  },
+  data() {
+    return {
+      about1:require('@/assets/img/about/about_1.png'),
+      about2:require('@/assets/img/about/about_2.jpg'),
+      about4:require('@/assets/img/about/about_4.png'),
+      about5:require('@/assets/img/about/about_5.png'),
+      categoryData:['公司介绍','公司资质','战略规划','战略大事记'],//显示右侧列表的内容
+      positionArr:[],//存放右侧列表导航的具体位置
+      activeIndex:0,//当前要到的导航位置
+    };
+  },
+  mounted(){
+    this.categoryData.forEach((item,index)=>{
+      this.positionArr.push(document.querySelector('#position'+(index+1)).offsetTop)
+    })
+    window.onscroll=this.throttle(this.handleWindowScroll);
+    this.handleLoadSlow(500);
+  },
+  methods:{
+    handleScroll(index){
+      window.scrollTo(0,this.positionArr[index])
+      this.handleWindowScroll();
+    },
+    handleLoadSlow(time){
+      let timer = setInterval(() => {
+        let arr = [],isDone = false;
+        this.categoryData.forEach((item,index)=>{
+          arr.push(document.querySelector('#position'+(index+1)).offsetTop)
+        })
+        for(let i = 0;i<arr.length;i++){
+          if(arr[i]!==this.positionArr[i]){
+            this.positionArr = arr;
+            break;
+          }else if(arr[i] == this.positionArr[i] && i === arr.length - 1){
+              isDone = true;
+          }
+        }
+        if(isDone){
+          clearInterval(timer) 
+          this.handleWindowScroll();
+        }
+      }, time);
+    },
+    handleWindowScroll(){
+      let height = window.pageYOffset;
+      for(let i = 0; i<this.positionArr.length; i++){
+        if(height < this.positionArr[0]){
+          this.activeIndex = 0;
+          break;
+        }else if(height >= this.positionArr[i] && (height < this.positionArr[i+1] || !this.positionArr[i+1])){
+          this.activeIndex = i;
+          break;
+        }
+      }
+    },
+    throttle(fn, wait = 50){
+      let previous = 0
+      return function(...args) {
+        let now = +new Date()
+        if (now - previous > wait) {
+          previous = now
+          fn.apply(this, args)
+        }
+      }
+    },
+  },
+  destroyed(){
+    window.onscroll = null;
+  }
+};
+</script>
+<style lang="scss" scoped>
+.container {
+  .top_index{
+    position: fixed;
+    top:20%;
+    right: 20px;
+    background: rgba($color: #000000, $alpha: 0.3);
+    z-index: 2;
+    color: #fff;
+    // display: flex;
+    // justify-content: space-around;
+    .top_item{
+      line-height: 30px;
+      font-size: 16px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .top_item.active,.top_item:hover{
+      color: #224078;
+      background: #6190E8;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+  }
+  .page-header {
+    @include pageHeader();
+    p:last-child {
+      line-height: 30px;
+    }
+  }
+  .img.specialBG{
+      background: #f9faff;
+      img{
+          position: relative;
+          left:-80px;
+      }
+  }
+  .img {
+    line-height: 0;
+    img {
+      width: 100%;
+    }
+  }
+  .img:first-child {
+    text-align: center;
+    img {
+      width: 1200px;
+    }
+  }
+}
+#position1+div{
+  min-height: 640px;
+}
+#position2+div{
+  min-height: 910px;
+}
+#position4+div{
+  min-height: 622px;
+}
+</style>
