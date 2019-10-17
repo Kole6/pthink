@@ -108,7 +108,11 @@
 export default {
   data() {
     return {
-      picList:[
+      picList:[]
+    };
+  },
+  mounted(){
+    this.picList = [
         require(`../../assets/img/guanwang/banner/banner1.jpg`),
         require(`../../assets/img/guanwang/banner/banner6.jpg`),
         require(`../../assets/img/guanwang/banner/banner7.jpg`),
@@ -116,10 +120,6 @@ export default {
         require(`../../assets/img/guanwang/banner/banner4.jpg`),
         require(`../../assets/img/guanwang/banner/banner5.jpg`)
       ]
-    };
-  },
-  mounted(){
-    console.log('mounted')
   },
   methods: {
     transform(text){

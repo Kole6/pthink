@@ -13,6 +13,8 @@ function defaultChangeView(defaultComponent){
   }
 }
 export default new Router({
+  // mode: 'history',
+  // base: __dirname,
   routes: [
     {
       path:'/',
@@ -27,6 +29,7 @@ export default new Router({
       components: defaultChangeView(resolve => require(['@/views/index/index.vue'], resolve)),
     },{
       path:'/product',
+      name:'product',
       components:defaultChangeView(resolve => require(['@/views/product/productIndex.vue'], resolve)),
     },{
       path:'/research',

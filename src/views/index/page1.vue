@@ -3,20 +3,20 @@
   <div class="scollpage">
     <div class="scoll-header">
       <div class="scoll-top">
-        <img src="..\..\assets\img\logo.png" alt>
+        <img src="..\..\assets\img\logo.png" alt />
         <div class="menu">
           <ul class="menu_ul">
             <li class="flip">
-              <router-link to='/home'>首页</router-link>
+              <router-link to="/home">首页</router-link>
               <!-- <a href="#">首页</a> -->
             </li>
             <li class="flip flip_list">
-              <router-link to='/product'>产品</router-link>
+              <router-link :to="{path:'/product',query:{load:transform('数据产品')}}">产品</router-link>
               <!-- <a href="#"></a> -->
               <div class="menu_list web">
                 <ul class="list_ul">
                   <li v-for="(item,index) in marqueeList" :key="index" @click="handleBtn(src)">
-                    <span class="text" :to=item.src >{{item.text}}</span>
+                    <span class="text" :to="item.src">{{item.text}}</span>
                   </li>
                 </ul>
               </div>
@@ -31,7 +31,7 @@
               <div class="menu_list sem">
                 <ul class="list_ul">
                   <li v-for="(item,index) in tabledate" :key="index" @click="handleBtn(src)">
-                    <span class="text" :to=item.src >{{item.text}}</span>
+                    <span class="text" :to="item.src">{{item.text}}</span>
                   </li>
                 </ul>
               </div>
@@ -52,43 +52,43 @@
 export default {
   data() {
     return {
-      marqueeList:[
+      marqueeList: [
         {
-          text:"智慧校园",
-          src:""
+          text: "智慧校园",
+          src: ""
         },
         {
-          text:"智慧魔方",
-          src:""
+          text: "智慧魔方",
+          src: ""
         }
       ],
-      tabledate:[
+      tabledate: [
         {
-          text:"公司介绍",
-          src:""
+          text: "公司介绍",
+          src: ""
         },
         {
-          text:"联系我们",
-          src:""
+          text: "联系我们",
+          src: ""
         }
       ],
-      picList: [
-      ],
-      isShowPic:true,
+      picList: [],
+      isShowPic: true
     };
   },
-  watch:{
-  },
-  mounted(){
-  },
+  watch: {},
+  mounted() {},
   methods: {
-    handleBtn(src){
-        this.$router.push({
-              path:src,
-            });
+    handleBtn(src) {
+      this.$router.push({
+        path: src
+      });
+    },
+    transform(text) {
+      return escape(text);
     }
   }
-}
+};
 </script>
 <style lang='scss' scoped>
 .scollpage {
@@ -98,7 +98,7 @@ export default {
     .scoll-top {
       @include gobalWidth();
       position: relative;
-      img{
+      img {
         padding-top: 5px;
       }
       button {
@@ -113,7 +113,7 @@ export default {
         cursor: pointer;
         border-radius: 5px;
         font-weight: bold;
-        a{
+        a {
           color: #36aeea;
         }
       }
@@ -140,28 +140,28 @@ export default {
             .active {
               border-bottom: 2px solid #fff;
             }
-            .menu_list{
-                  cursor: pointer;
-                  border-radius: 3px;
-                  margin-top: 8px;
-                  margin-left: -8px;
-                  position: absolute;
-                  z-index: 9999;
-                  display: none;
-                  width: 210px;
-                  background: #fff;
-                  font:16px/40px MicrosoftYaHei;
-                  .list_ul{
-                    width: 100%;
-                    border-radius: 0 0 5px 5px;
-                    li{
-                      padding-left: 10px;
-                      &:hover{
-                        background: #36aeea;
-                        color: #fff;
-                      }
-                    }
+            .menu_list {
+              cursor: pointer;
+              border-radius: 3px;
+              margin-top: 8px;
+              margin-left: -8px;
+              position: absolute;
+              z-index: 9999;
+              display: none;
+              width: 210px;
+              background: #fff;
+              font: 16px/40px MicrosoftYaHei;
+              .list_ul {
+                width: 100%;
+                border-radius: 0 0 5px 5px;
+                li {
+                  padding-left: 10px;
+                  &:hover {
+                    background: #36aeea;
+                    color: #fff;
                   }
+                }
+              }
             }
           }
           // .flip_list{

@@ -145,4 +145,12 @@ export default {
     }
 }
 </style>
-
+<style scoped>
+.img_wrapper>>>img{
+    transition: transform 0.3s;
+}
+.img_wrapper>>>img:hover{
+    transform-origin: center;
+    transform: scale(1.1);
+}
+</style>

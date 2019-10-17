@@ -91,7 +91,7 @@ export default {
     },
     handleChoose(type){
       this.query = type;
-      this.$router.push({path:'/product',query:type});
+      this.$router.push({path:'/product',query:type})
       this.showCategory = false;
       this.handleRefresh();
     },
