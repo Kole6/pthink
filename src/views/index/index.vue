@@ -1,7 +1,7 @@
 <!--官网首页-->
 <template>
   <div>
-    <div :options="options" ref="fullpage">
+    <div>
       <!-- <div class="section">
         <page1></page1>
       </div> -->

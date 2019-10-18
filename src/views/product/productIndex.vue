@@ -5,7 +5,7 @@
       <category @chooseType="handleChoose($event)"></category>
     </template>
     <template v-else>
-      <div :options="options" ref="fullpage" v-if="reFresh">
+      <div v-if="reFresh">
         <!-- <div class="back" @click="$router.go(-1)">返回</div> -->
         <div class="section">
           <pageImg :query="query"></pageImg>
@@ -48,21 +48,6 @@ export default {
   data() {
     return {
       query:null,
-      options: {
-        afterLoad: this.afterLoad,
-        navigation: true,
-        scrollingSpeed: 600,
-        verticalCentered: false,
-        scrollOverflow: true, //内容超过满屏后显示滚动条
-        sectionsColor: [
-          "#41b883",
-          "#ff5f45",
-          "#0798ec",
-          "#fec401",
-          "#1bcee6",
-          "#ee1a59"
-        ],
-      },
       showCategory:true,
       reFresh:true,
     };
@@ -86,9 +71,6 @@ export default {
     }
   },
   methods: {
-    afterLoad: function(origin, destination, direction) {
-      // console.log(destination);
-    },
     handleChoose(type){
       this.query = type;
       this.$router.push({path:'/product',query:type})

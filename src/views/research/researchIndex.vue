@@ -1,7 +1,7 @@
 <!--官网首页-->
 <template>
   <div>
-    <div :options="options" ref="fullpage">
+    <div>
       <div class="section">
         <page1></page1>
       </div>
@@ -36,27 +36,9 @@ export default {
   },
   data() {
     return {
-      options: {
-        afterLoad: this.afterLoad,
-        navigation: true,
-        scrollingSpeed: 600,
-        verticalCentered: false,
-        scrollOverflow: true, //内容超过满屏后显示滚动条
-        sectionsColor: [
-          "#41b883",
-          "#ff5f45",
-          "#0798ec",
-          "#fec401",
-          "#1bcee6",
-          "#ee1a59"
-        ]
-      },
     };
   },
   methods: {
-    afterLoad: function(origin, destination, direction) {
-      // console.log(destination);
-    }
   }
 };
 </script>
