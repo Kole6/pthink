@@ -193,7 +193,7 @@ export default {
           }
           .page2-proimg-a {
             width: 60%;
-            @keyframes mycolor {
+            @-webkit-keyframes mycolor {
               from {
                 -webkit-transform: rotate(0deg);
               }
@@ -210,7 +210,7 @@ export default {
             display: none;
             width: 44.4%;
             top: 4%;
-            @keyframes mycolor1 {
+            @-webkit-keyframes mycolor1 {
               from {
                 -webkit-transform: rotate(0deg);
               }
@@ -219,23 +219,21 @@ export default {
               }
             }
           }
-          
-        }
-        .page2-profont{
-          width: 92%;
-          margin:70% auto;
-          margin-bottom: 0;
-          text-align:center;
-          .page2-profont-1{
-            font-size:18px ;
-            color:black;
-            font-weight: bold;
+          &:hover .page2-proimg-c {
+            display: inline;
+            -webkit-animation: mycolor1 1s linear infinite;
           }
-          .page2-profont-2{
-            font-size:14px ;
-            color: #9CA8B9;
-            text-align: left;
-            display:inline-block;
+          &:hover .page2-proimg-a {
+            -webkit-animation: mycolor 1s linear infinite;
+          }
+          .page2-quan {
+            width: 44.4%;
+            top: 4%;
+          }
+          .page2-proimg-d {
+            width: 15%;
+            cursor: pointer;
+            top: 11%;
           }
         }
       }
