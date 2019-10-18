@@ -214,10 +214,10 @@ export default {
           
         }
         .page2-profont{
-          text-align: center;
           width: 92%;
           margin:70% auto;
           margin-bottom: 0;
+          text-align:center;
           .page2-profont-1{
             font-size:18px ;
             color:black;
@@ -226,6 +226,8 @@ export default {
           .page2-profont-2{
             font-size:14px ;
             color: #9CA8B9;
+            text-align: left;
+            display:inline-block;
           }
         }
 

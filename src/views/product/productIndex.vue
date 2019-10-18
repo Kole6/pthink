@@ -6,7 +6,8 @@
     </template>
     <template v-else>
       <div :options="options" ref="fullpage" v-if="reFresh">
-        <!-- <div class="back" @click="$router.go(-1)">返回</div> -->
+        <page-content :query="query"></page-content>
+        <!-- <el-button size="mini" @click="$router.go(-1)">返回</el-button>
         <div class="section">
           <pageImg :query="query"></pageImg>
         </div>
@@ -18,7 +19,7 @@
         </div>
         <div class="section">
           <page3 :query="query"></page3>
-        </div>
+        </div> -->
       </div>
     </template>
   </div>
@@ -29,12 +30,14 @@ import page2 from "./productPage2.vue";
 import page3 from "./productPage3.vue";
 import category from "./productCategory.vue";
 import pageImg from './productImg.vue'
+import pageContent from './productContent.vue'
 // import page5 from "./page5.vue";
 // import page6 from "./page6.vue";
 // import bottom from './bottomInfo.vue';
 export default {
   name: "productIndex",
   components: {
+    pageContent,
     page1,
     page2,
     page3,

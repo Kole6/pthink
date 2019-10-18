@@ -41,7 +41,7 @@
             </li>
           </ul>
           <button>
-            <a target="_blank" href="http://zzdc.zyjyzg.org/dc/login.action">产品下载</a>
+            <a target="_blank" href="http://zzdc.zyjyzg.org/dc/login.action">产品演示</a>
           </button>
         </div>
       </div>
