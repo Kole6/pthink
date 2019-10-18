@@ -44,6 +44,7 @@ export default {
                 {img:'/static/type/p13.jpg',name:'C端应用'},
                 {img:'/static/type/p14.jpg',name:'C端应用'},
                 {img:'/static/type/p15.jpg',name:'C端应用'},
+                {img:'/static/type/P16.jpg',name:'C端应用'},
             ],
         }
     },

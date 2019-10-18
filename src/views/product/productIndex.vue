@@ -5,8 +5,14 @@
       <category @chooseType="handleChoose($event)"></category>
     </template>
     <template v-else>
-      <div :options="options" ref="fullpage" v-if="reFresh">
-        <page-content :query="query"></page-content>
+      <div ref="fullpage" v-if="reFresh">
+        <page-content :query="query" v-if="!showSpecialPage"></page-content>
+        <template v-else>
+          <div class="back" @click="$router.go(-1)">返回</div>
+          <div style="text-align:center;">
+            <img src="/static/type/special.jpg" alt="" style="width:100%;max-width:1200px;">
+          </div>
+        </template>
         <!-- <el-button size="mini" @click="$router.go(-1)">返回</el-button>
         <div class="section">
           <pageImg :query="query"></pageImg>
@@ -53,6 +59,7 @@ export default {
       query:null,
       showCategory:true,
       reFresh:true,
+      showSpecialPage:false,
     };
   },
   watch:{
@@ -64,6 +71,12 @@ export default {
         }else{
           // 携带参数，对参数类型进行判断
           if( (!!n.query.type || n.query.type === 0) && !!n.query.name){
+            // 对单独的页面进行特殊处理
+            if(n.query.name=='可信教育一证通App'){
+              this.showSpecialPage = true;
+            }else{
+              this.showSpecialPage = false;
+            }
             this.query = n.query;
             window.scroll(0,0)
             this.handleChoose(n.query)
@@ -75,6 +88,12 @@ export default {
   },
   methods: {
     handleChoose(type){
+      // 对单独的页面进行特殊处理
+      if( type.name=="C端应用" && type.type === 3){
+        this.showSpecialPage = true;
+      }else{
+        this.showSpecialPage = false;
+      }
       this.query = type;
       this.$router.push({path:'/product',query:type})
       this.showCategory = false;
@@ -94,10 +113,16 @@ export default {
 </script>
 <style lang='scss' scoped>
 .back{
-  position: sticky;
-  top: 10px;
-  z-index: 3;
-  width: 50px;
-  background: yellow;
+    width: 60px;
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.8;
+    color: white;
+    background: #36eacc;
+    cursor: pointer;
 }
 </style>
