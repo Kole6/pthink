@@ -193,12 +193,12 @@ export default {
           }
           .page2-proimg-a {
             width: 60%;
-            @-webkit-keyframes mycolor {
+            @keyframes mycolor {
               from {
-                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
               }
               to {
-                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
               }
             }
           }
@@ -210,21 +210,21 @@ export default {
             display: none;
             width: 44.4%;
             top: 4%;
-            @-webkit-keyframes mycolor1 {
+            @keyframes mycolor1 {
               from {
-                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
               }
               to {
-                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
               }
             }
           }
           &:hover .page2-proimg-c {
             display: inline;
-            -webkit-animation: mycolor1 1s linear infinite;
+            animation: mycolor1 1s linear infinite;
           }
           &:hover .page2-proimg-a {
-            -webkit-animation: mycolor 1s linear infinite;
+            animation: mycolor 1s linear infinite;
           }
           .page2-quan {
             width: 44.4%;
