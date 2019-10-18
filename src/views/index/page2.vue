@@ -1,4 +1,4 @@
-<!--我们的产品-->
+<!--首页图片+我们的产品-->
 <template>
   <div>
     <div class="scoll-body">
@@ -121,7 +121,7 @@
 export default {
   data() {
     return {
-      elCarHeight:"100vh - 70px",
+      elCarHeight: "100vh - 70px",
       picList: [
         require(`../../assets/img/guanwang/banner/banner1.jpg`),
         require(`../../assets/img/guanwang/banner/banner6.jpg`),
@@ -132,9 +132,8 @@ export default {
       ]
     };
   },
-  mounted () {
-    // this.elCarHeight="500px"
-     this.elCarHeight=document.body.clientWidth/2.37 +"px";
+  mounted() {
+    this.elCarHeight = document.body.clientWidth / 2.37 + "px";
   },
   methods: {
     transform(text) {
