@@ -3,7 +3,7 @@
   <div class="scollpage">
     <div class="scoll-header">
       <div class="scoll-top">
-        <img src="..\..\assets\img\logo.png" alt />
+        <img src="..\..\assets\img\logo.png" alt  style="width:90px"/>
         <div class="menu">
           <ul class="menu_ul">
             <li class="flip">
@@ -41,7 +41,7 @@
             </li>
           </ul>
           <button>
-            <a target="_blank" href="http://zzdc.zyjyzg.org/dc/login.action">产品演示</a>
+            <a target="_blank" href="http://47.103.69.156:18089/yspt/login">产品演示</a>
           </button>
         </div>
       </div>

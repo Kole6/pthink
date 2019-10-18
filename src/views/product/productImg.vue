@@ -3,7 +3,7 @@
     <div class="img_wrapper">
       <div class="img_content">
         <p class="title">{{titleContent[0].title}}</p>
-        <p class="desc">{{titleContent[0].text}}</p>
+        <p class="desc" v-html="titleContent[0].text"></p>
         <el-carousel :interval="5000" type="card" arrow="never" height="300px">
           <el-carousel-item v-for="(item,i) of picContent" :key="i">
             <img :src="item.img" class="picture" alt>
