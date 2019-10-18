@@ -186,8 +186,8 @@ const mainFunctionData = [
 
     {name:'智慧校园',index:2,num:1,icon:require('@/assets/img/product/detail/icon_p2_3_1.png'),title:'基础数据采集：数据仓库、开放共享',text:'数据采集任务分配到人，实现数据填报、校验审核、完整归档；汇聚各类数据，通过清洗、过滤，实现校内共享、校外开放；对接国家、省级系统，完成数据上报。'},
     {name:'智慧校园',index:2,num:2,icon:require('@/assets/img/product/detail/icon_p2_3_2.png'),title:'数据分析：让决策有据可依',text:'以可视化图形图表动态展现日常业务监测，使管理者可实时观测各项关键指标，过程中预警、过程中干预，辅助领导决策；掌握学校关键核心数据项、国家标准、同类平均、省平均、全国平均等，及时了解学校的指标满足程度和需要完善的地方。'},
-    {name:'智慧校园',index:2,num:3,icon:require('@/assets/img/product/detail/icon_p2_3_3.png'),title:'“一表通”--解决数据多次采集和复用问题',text:'系统将采集的数据打散成原子数据，学校可自由组合不同报表；系统将采集的数据打散成原子数据，学校可自由组合不同报表；采用SAAS模式，学校可根据实际情况采购相关模块。'},
-    {name:'智慧校园',index:2,num:4,icon:require('@/assets/img/product/detail/icon_p2_3_4.png'),title:'诊改任务管理：监控诊改工作状态',text:'帮助学校对诊改工作过程进行日常跟踪和管理，促使学校按照诊断项目标准开展诊改工作;通过诊断点加权打分计算，状态报告和可视化图表呈现学校诊改工作达成情况和完成趋势.'},
+    {name:'智慧校园',index:2,num:3,icon:require('@/assets/img/product/detail/icon_p2_3_3.png'),title:'“一表通”：解决数据多次采集和复用问题',text:'系统将采集的数据打散成原子数据，学校可自由组合不同报表；系统将采集的数据打散成原子数据，学校可自由组合不同报表；采用SAAS模式，学校可根据实际情况采购相关模块。'},
+    {name:'智慧校园',index:2,num:4,icon:require('@/assets/img/product/detail/icon_p2_3_4.png'),title:'诊改任务管理：监控诊改工作状态',text:'帮助学校对诊改工作过程进行日常跟踪和管理，促使学校按照诊断项目标准开展诊改工作;通过诊断点加权打分计算，状态报告和可视化图表呈现学校诊改工作达成情况和完成趋势。'},
 
     {name:'智慧校园',index:3,num:1,icon:require('@/assets/img/product/detail/icon_p2_4_1.png'),title:'专业框架体系建设',text:'系统自带《中等职业学校专业目录》，帮助老师轻松打造科学的专业架构。统一的建设标准，教学质量更有保障，预设的专业建设模块，简单的鼠标级操作'},
     {name:'智慧校园',index:3,num:2,icon:require('@/assets/img/product/detail/icon_p2_4_2.png'),title:'精品课程建设与申报评审',text:'教师通过课程网站建设向导可迅速建立一个专业精品课程站点，大大减少教师的工作量。通过申报内容、评审指标、评价等级、分值权重的统一初始化设置，实现精品课程的建设、申报、评审、公示全过程的智能化管理。'},
