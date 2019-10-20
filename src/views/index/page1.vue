@@ -76,8 +76,6 @@ export default {
       isShowPic: true
     };
   },
-  watch: {},
-  mounted() {},
   methods: {
     handleBtn(src) {
       this.$router.push({

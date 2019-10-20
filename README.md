@@ -2,7 +2,7 @@
 name：新朋程官网
 
 ## 设计
-![首页.jpg](https://upload-images.jianshu.io/upload_images/5141942-c822ef5aed580a46.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)    
+![首页.jpg](https://upload-images.jianshu.io/upload_images/5141942-c822ef5aed580a46.jpg)    
 
 ## Project setup
 ```
