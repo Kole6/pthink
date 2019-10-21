@@ -108,7 +108,7 @@
                 <span class="page2-profont-1">C端应用</span>
                 <br />
                 <br />
-                <span class="page2-profont-2">以移动电子证为核心主线，整合教育产业链产品资源，汇聚用户学习、工作、生活轨迹数据，挖掘数据价值、预测发展需求</span>
+                <span class="page2-profont-2">以可信教育一证通为入口，保障师生校内外学习与生活应用基础上，深度整合教育产业链相关应用和服务，为师生提供广域继续教育、金融、保险、通信、交通、航空、旅游、电子商务等民生社会共享服务与资源</span>
               </div>
             </router-link>
           </div>
@@ -140,7 +140,7 @@ export default {
     handleImgClick(index){
       // 可信教育一证通
       if(index === 1){
-        this.$router.push({path:'/product',query:{type:3,name:'C端应用'}})
+        this.$router.push({path:'/product',query:{type:0,name:'C端应用'}})
       }
     },
     transform(text) {
@@ -257,6 +257,8 @@ export default {
         .page2-profont-2 {
           font-size: 14px;
           color: #9ca8b9;
+          display:inline-block;
+          text-align:left;
         }
       }
     }

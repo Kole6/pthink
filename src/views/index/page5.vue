@@ -57,7 +57,7 @@ export default {
         {to:{path:'/product',query:''},img:require(`../../assets/img/guanwang/product/p1.jpg`)},
         {to:{path:'/product',query:{type:0,name:'数据产品'}},img:require(`../../assets/img/guanwang/product/p2.jpg`)},
         {to:{path:'/product',query:{type:1,name:'数据产品'}},img:require(`../../assets/img/guanwang/product/p3.jpg`)},
-        {to:{path:'/product',query:{type:1,name:'C端应用'}},img:require(`../../assets/img/guanwang/product/p4.jpg`)},
+        {to:{path:'/product',query:{type:1,name:'C端应用'}},img:require(`../../assets/img/guanwang/product/p4_2_1.jpg`)},
       ],
       top:0,
       hasPlayed:false,//是否播放过数字动画

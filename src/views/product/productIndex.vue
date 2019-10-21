@@ -52,7 +52,7 @@ export default {
           // 携带参数，对参数类型进行判断
           if( (!!n.query.type || n.query.type === 0) && !!n.query.name){
             // 对单独的页面进行特殊处理
-            if(n.query.name=='可信教育一证通App'||(n.query.type=='3' && n.query.name=='C端应用')){
+            if(n.query.name=='可信教育一证通App'||(n.query.type=='0' && n.query.name=='C端应用')){
               this.showSpecialPage = true;
             }else{
               this.showSpecialPage = false;
@@ -69,7 +69,7 @@ export default {
   methods: {
     handleChoose(type){
       // 对单独的页面进行特殊处理
-      if( type.name=="C端应用" && type.type === 3 || (type.type=='3' && type.name=='C端应用')){
+      if( type.name=="C端应用" && type.type === 3 || (type.type=='0'  && type.name=='C端应用')){
         this.showSpecialPage = true;
       }else{
         this.showSpecialPage = false;
