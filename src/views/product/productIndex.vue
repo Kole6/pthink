@@ -8,7 +8,7 @@
       <div ref="fullpage" v-if="reFresh">
         <page-content :query="query" v-if="!showSpecialPage"></page-content>
         <template v-else>
-          <div class="back" @click="$router.go(-1)">返回</div>
+          <!-- <div class="back" @click="$router.go(-1)">返回</div> -->
           <div style="text-align:center;">
             <img src="/static/type/special.jpg" alt="" style="width:100%;max-width:1200px;">
           </div>
@@ -65,8 +65,8 @@ export default {
   watch:{
     '$route':{
       handler(n,o){
-        // 不携带参数，显示种类
-        if(Object.keys(n.query).length === 0 || !!n.query.load){
+        // 不携带参数，显示种类   
+        if(Object.keys(n.query).length === 0 || 'load' in n.query){
           this.showCategory = true;
         }else{
           // 携带参数，对参数类型进行判断

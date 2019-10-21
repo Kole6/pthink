@@ -9,7 +9,7 @@
             <p class="bottom_c_left_title" @click="handleRouter({type:1,name:'数据产品'})">校本数据中心</p>
             <p class="bottom_c_left_title" @click="handleRouter({type:0,name:'质量管理'})">智慧魔方质量监测</p>
             <!-- KPI决策平台 -->
-            <p class="bottom_c_left_title" @click="handleRouter({type:1,name:'质量管理'})">可信教育一证通</p>
+            <p class="bottom_c_left_title" @click="handleRouter({type:3,name:'C端应用'})">可信教育一证通</p>
           </div>
           <div class="bottom_c_middle">
             <p
