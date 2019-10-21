@@ -28,7 +28,7 @@ export default {
             content1:[
                 {img:'/static/type/p3.jpg',name:'数据产品'},
                 {img:'/static/type/p4.jpg',name:'数据产品'},
-                {img:'/static/type/p16.jpg',name:'数据产品'},
+                {img:'/static/type/p17.jpg',name:'数据产品'},
                 {img:'/static/type/p6.jpg',name:'数据产品'},
                 
                 {img:'/static/type/p7.jpg',name:'智慧校园'},

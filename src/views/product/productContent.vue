@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <el-button size="mini" @click="$router.go(-1)">返回</el-button> -->
-    <div class="back" @click="$router.go(-1)">返回</div>
+    <!-- <div class="back" @click="$router.go(-1)">返回</div> -->
     <div class="section">
       <pageImg :query="query"></pageImg>
     </div>

@@ -64,7 +64,6 @@ export default {
             if(this.start !== 0){
                 this.functionContent.pop();
                 this.functionContent.unshift(this.functionData[--this.start])
-                console.log(this.functionContent,this.functionData)
             }
         },
         rightClick(){
@@ -72,7 +71,6 @@ export default {
                 this.start++
                 this.functionContent.shift();
                 this.functionContent.push(this.functionData[this.start+3])
-                console.log(this.functionContent,this.functionData)
             }
 
         }
@@ -94,7 +92,7 @@ export default {
         // justify-content: center;
         position: relative;
         text-align: center;
-        max-width: 1200px;
+        max-width: 1050px;
         margin: 0 auto;
         // white-space: nowrap;
         padding-top: 40px;
@@ -124,7 +122,7 @@ export default {
             vertical-align: top;
             box-sizing: border-box;
             display: inline-block;
-            width: 300px;
+            width: 260px;
             height: 485px;
             padding:0 25px 30px 25px;
             border-radius: 5px;
