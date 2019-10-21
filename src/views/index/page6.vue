@@ -94,8 +94,9 @@ export default {
       }
     },
     mounted(){
-      this.setCountry(this.companyData[0].geo,this.companyData[0]);
-      // this.$router.go(-window.history)
+      if(BMap){
+        this.setCountry(this.companyData[0].geo,this.companyData[0]);
+      }
     },
     methods:{
       handleEnter(index){

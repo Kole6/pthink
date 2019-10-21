@@ -65,8 +65,8 @@ export default {
   watch:{
     '$route':{
       handler(n,o){
-        // 不携带参数，显示种类
-        if(Object.keys(n.query).length === 0 || !!n.query.load){
+        // 不携带参数，显示种类   
+        if(Object.keys(n.query).length === 0 || 'load' in n.query){
           this.showCategory = true;
         }else{
           // 携带参数，对参数类型进行判断
