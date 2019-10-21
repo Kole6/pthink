@@ -10,7 +10,7 @@
         <template v-else>
           <!-- <div class="back" @click="$router.go(-1)">返回</div> -->
           <div style="text-align:center;">
-            <img src="/static/type/special.jpg" alt="" style="width:100%;max-width:1200px;">
+            <img src="static/type/special.jpg" alt="" style="width:100%;max-width:1200px;">
           </div>
         </template>
         <!-- <el-button size="mini" @click="$router.go(-1)">返回</el-button>
