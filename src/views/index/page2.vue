@@ -139,7 +139,7 @@ export default {
   methods: {
     handleImgClick(index){
       // 可信教育一证通
-      if(index === 6){
+      if(index === 1){
         this.$router.push({path:'/product',query:{type:3,name:'C端应用'}})
       }
     },

@@ -13,19 +13,6 @@
             <img src="static/type/special.jpg" alt="" style="width:100%;max-width:1200px;">
           </div>
         </template>
-        <!-- <el-button size="mini" @click="$router.go(-1)">返回</el-button>
-        <div class="section">
-          <pageImg :query="query"></pageImg>
-        </div>
-        <div class="section">
-          <page1 :query="query"></page1>
-        </div>
-        <div class="section">
-          <page2 :query="query"></page2>
-        </div>
-        <div class="section">
-          <page3 :query="query"></page3>
-        </div> -->
       </div>
     </template>
   </div>
@@ -37,9 +24,6 @@ import page3 from "./productPage3.vue";
 import category from "./productCategory.vue";
 import pageImg from './productImg.vue'
 import pageContent from './productContent.vue'
-// import page5 from "./page5.vue";
-// import page6 from "./page6.vue";
-// import bottom from './bottomInfo.vue';
 export default {
   name: "productIndex",
   components: {
@@ -49,10 +33,6 @@ export default {
     page3,
     category,
     pageImg,
-    // page4,
-    // page5,
-    // page6,
-    // bottom,
   },
   data() {
     return {
@@ -72,7 +52,7 @@ export default {
           // 携带参数，对参数类型进行判断
           if( (!!n.query.type || n.query.type === 0) && !!n.query.name){
             // 对单独的页面进行特殊处理
-            if(n.query.name=='可信教育一证通App'){
+            if(n.query.name=='可信教育一证通App'||(n.query.type=='3' && n.query.name=='C端应用')){
               this.showSpecialPage = true;
             }else{
               this.showSpecialPage = false;
@@ -89,7 +69,7 @@ export default {
   methods: {
     handleChoose(type){
       // 对单独的页面进行特殊处理
-      if( type.name=="C端应用" && type.type === 3){
+      if( type.name=="C端应用" && type.type === 3 || (type.type=='3' && type.name=='C端应用')){
         this.showSpecialPage = true;
       }else{
         this.showSpecialPage = false;
