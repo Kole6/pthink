@@ -3,8 +3,8 @@
   <div>
     <div class="scoll-body">
       <el-carousel :interval="4000" arrow="always" :height="elCarHeight">
-        <el-carousel-item v-for="(item,i) of picList" :key="i">
-          <img :src="item" class="up_pic" alt />
+        <el-carousel-item v-for="(item,i) of picList" :key="i" >
+          <img :src="item" class="up_pic" alt  @click="handleImgClick(i)"/>
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -128,7 +128,8 @@ export default {
         require(`../../assets/img/guanwang/banner/banner7.jpg`),
         require(`../../assets/img/guanwang/banner/banner3.jpg`),
         require(`../../assets/img/guanwang/banner/banner4.jpg`),
-        require(`../../assets/img/guanwang/banner/banner5.jpg`)
+        require(`../../assets/img/guanwang/banner/banner5.jpg`),
+        require(`../../assets/img/guanwang/banner/banner8.jpg`),
       ]
     };
   },
@@ -136,6 +137,12 @@ export default {
     this.elCarHeight = document.body.clientWidth / 2.37 + "px";
   },
   methods: {
+    handleImgClick(index){
+      // 可信教育一证通
+      if(index === 6){
+        this.$router.push({path:'/product',query:{type:3,name:'C端应用'}})
+      }
+    },
     transform(text) {
       if (!!text) {
         return escape(text);
