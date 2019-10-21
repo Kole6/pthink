@@ -124,12 +124,12 @@ export default {
       elCarHeight: "100vh - 70px",
       picList: [
         require(`../../assets/img/guanwang/banner/banner1.jpg`),
+        require(`../../assets/img/guanwang/banner/banner8.jpg`),
         require(`../../assets/img/guanwang/banner/banner6.jpg`),
         require(`../../assets/img/guanwang/banner/banner7.jpg`),
         require(`../../assets/img/guanwang/banner/banner3.jpg`),
         require(`../../assets/img/guanwang/banner/banner4.jpg`),
         require(`../../assets/img/guanwang/banner/banner5.jpg`),
-        require(`../../assets/img/guanwang/banner/banner8.jpg`),
       ]
     };
   },

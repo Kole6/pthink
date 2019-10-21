@@ -28,7 +28,7 @@ export default {
             content1:[
                 {img:'./static/type/p3.jpg',name:'数据产品'},
                 {img:'./static/type/p4.jpg',name:'数据产品'},
-                {img:'./static/type/p17.jpg',name:'数据产品'},
+                {img:'./static/type/P17.jpg',name:'数据产品'},
                 {img:'./static/type/p6.jpg',name:'数据产品'},
                 
                 {img:'./static/type/p7.jpg',name:'智慧校园'},
@@ -44,7 +44,7 @@ export default {
                 {img:'./static/type/p13.jpg',name:'C端应用'},
                 {img:'./static/type/p14.jpg',name:'C端应用'},
                 {img:'./static/type/p15.jpg',name:'C端应用'},
-                {img:'./static/type/P16.jpg',name:'C端应用'},
+                {img:'./static/type/p16.jpg',name:'C端应用'},
             ],
         }
     },
