@@ -41,7 +41,7 @@
             </li>
           </ul>
           <button>
-            <a target="_blank" href="http://47.103.69.156:18089/yspt/login">产品演示</a>
+            <a target="_blank" href="http://47.103.69.156:18089/yspt/#/login">产品演示</a>
           </button>
         </div>
       </div>

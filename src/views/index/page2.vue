@@ -2,7 +2,7 @@
 <template>
   <div>
     <div class="scoll-body">
-      <el-carousel :interval="4000" arrow="always" :height="elCarHeight">
+      <el-carousel ref="carousel" :interval="timeInterval" arrow="always" :autoplay="autoplay" :height="elCarHeight" @change="handleImgChange">
         <el-carousel-item v-for="(item,i) of picList" :key="i" >
           <img :src="item" class="up_pic" alt  @click="handleImgClick(i)"/>
         </el-carousel-item>
@@ -121,26 +121,44 @@
 export default {
   data() {
     return {
+      timeInterval: 4000 ,
       elCarHeight: "100vh - 70px",
+      autoplay:false,
       picList: [
         require(`../../assets/img/guanwang/banner/banner1.jpg`),
         require(`../../assets/img/guanwang/banner/banner8.jpg`),
+        require(`../../assets/img/guanwang/banner/banner9.png`),
         require(`../../assets/img/guanwang/banner/banner6.jpg`),
         require(`../../assets/img/guanwang/banner/banner7.jpg`),
         require(`../../assets/img/guanwang/banner/banner3.jpg`),
         require(`../../assets/img/guanwang/banner/banner4.jpg`),
         require(`../../assets/img/guanwang/banner/banner5.jpg`),
-      ]
+      ],
     };
   },
   mounted() {
     this.elCarHeight = document.body.clientWidth / 2.37 + "px";
+    this.changeImgNext();
   },
   methods: {
+    handleImgChange(newIndex,oldIndex){
+      if(newIndex==0){
+        this.autoplay = false;
+        this.changeImgNext()
+      }
+    },
+    changeImgNext(){
+      setTimeout(()=>{
+        this.$refs.carousel && this.$refs.carousel.next();
+        this.autoplay = true;
+      },2000)
+    },
     handleImgClick(index){
       // 可信教育一证通
       if(index === 1){
         this.$router.push({path:'/product',query:{type:0,name:'C端应用'}})
+      }else if(index === 2){
+        this.$router.push({path:'/product',query:{type:5,name:'智慧校园'}})
       }
     },
     transform(text) {

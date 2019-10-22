@@ -81,7 +81,7 @@ export default {
           {name:'重庆分公司',city:'重庆市',geo:[106.515991,29.615792],address:'重庆市渝北区财富大道2号财富大厦A座28-2',tel:'13020193006',mail:'fengongsi@pthink.com.cn',fax:'021-61508305',zipCode:'401121'},
           {name:'北京分公司',city:'北京市',geo:[116.379745,40.049025],address:'北京市海淀区永泰庄北路1号中关村东升国际创业园6号楼',tel:'13020193006',mail:'fengongsi@pthink.com.cn',fax:'021-61508305',zipCode:'100192'},
           {name:'江西分公司',city:'南昌市',geo:[116.029635,28.674568],address:'江西省南昌市南昌县天祥大道紫阳国际名品中心2层208号商铺',tel:'13020193006',mail:'fengongsi@pthink.com.cn',fax:'021-61508305',zipCode:'330095'},
-          {name:'各子分公司',content:['江西分公司','黑龙江分公司','新疆分公司','吉林分公司','云南分公司','贵州分公司','四川分公司',],address:'',tel:'13020193006',mail:'fengongsi@pthink.com.cn',fax:'',zipCode:''},
+          {name:'各子分公司',content:['黑龙江分公司','新疆分公司','吉林分公司','云南分公司','贵州分公司','四川分公司',],address:'',tel:'13020193006',mail:'fengongsi@pthink.com.cn',fax:'',zipCode:''},
         ],
         currentIndex:0,
         map:'',

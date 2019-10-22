@@ -9,7 +9,7 @@
         <p>公司介绍</p>
         <p>Company Introduction</p>
       </div>
-      <img :src="about1" alt>
+      <img :src="about1" alt style="max-width:1000px;">
     </div>
     <div id="position2"></div>
     <div class="img">
@@ -136,10 +136,12 @@ export default {
       cursor: pointer;
     }
     .top_item.active,.top_item:hover{
-      color: #224078;
+      color: #ffff1a;
       background: #6190E8;  /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
       background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      border-left: solid 5px;
+      margin-left: -5px;
     }
   }
   .page-header {
@@ -157,6 +159,7 @@ export default {
   }
   .img {
     line-height: 0;
+    text-align: center;
     img {
       width: 100%;
     }

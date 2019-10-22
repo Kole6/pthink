@@ -10,7 +10,7 @@
         <template v-else>
           <div class="back" @click="$router.go(-1)">返回</div>
           <div style="text-align:center;">
-            <img src="static/type/special.jpg" alt="" style="width:100%;max-width:1200px;">
+            <img :src="imgUrl" alt="" style="width:100%;max-width:1200px;">
           </div>
         </template>
       </div>
@@ -36,6 +36,7 @@ export default {
   },
   data() {
     return {
+      imgUrl:'',
       query:null,
       showCategory:true,
       reFresh:true,
@@ -50,13 +51,7 @@ export default {
           this.showCategory = true;
         }else{
           // 携带参数，对参数类型进行判断
-          if( (!!n.query.type || n.query.type === 0) && !!n.query.name){
-            // 对单独的页面进行特殊处理
-            if(n.query.name=='可信教育一证通App'||(n.query.type=='0' && n.query.name=='C端应用')){
-              this.showSpecialPage = true;
-            }else{
-              this.showSpecialPage = false;
-            }
+          if( (!!n.query.type || n.query.type === 0)  && !!n.query.name){
             this.query = n.query;
             window.scroll(0,0)
             this.handleChoose(n.query)
@@ -67,15 +62,22 @@ export default {
     }
   },
   methods: {
-    handleChoose(type){
-      // 对单独的页面进行特殊处理
-      if( type.name=="C端应用" && type.type === 3 || (type.type=='0'  && type.name=='C端应用')){
+    handleChoose(query){
+      // 对单独的页面进行特殊处理            
+      // let arrText = ['智慧立方校园管理','可信教育一证通App']
+      //  可信教育一证通     ||     智慧立方校园管理
+      if((query.type=='0'  && query.name=='C端应用') || (query.type == '5' && query.name == '智慧校园')){
+        if(query.type == '5' && query.name == '智慧校园'){
+          this.imgUrl = 'static/type/special_2.jpg'
+        }else{
+          this.imgUrl = 'static/type/special.jpg'
+        }
         this.showSpecialPage = true;
       }else{
         this.showSpecialPage = false;
       }
-      this.query = type;
-      this.$router.push({path:'/product',query:type})
+      this.query = query;
+      this.$router.push({path:'/product',query:query})
       this.showCategory = false;
       this.handleRefresh();
     },
