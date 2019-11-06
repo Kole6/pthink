@@ -32,3 +32,9 @@ yarn run lint
 ## Design rules
     1.fullpage
     2.多页面项目
+
+## BUG LIST
+```
+1.首屏优化
+2.在360极速浏览器IE模式，产品页为空
+```
