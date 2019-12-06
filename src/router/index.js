@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 /**
- * 
  * @param {*} defaultComponent 
  */
 function defaultChangeView(defaultComponent){
@@ -13,8 +12,6 @@ function defaultChangeView(defaultComponent){
   }
 }
 export default new Router({
-  // mode: 'history',
-  // base: __dirname,
   routes: [
     {
       path:'/',

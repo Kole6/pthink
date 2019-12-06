@@ -1,16 +1,42 @@
 import './assets/style/reset.min.css'
-import 'element-ui/lib/theme-chalk/index.css'
-import './assets/style/element.scss'
-
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 // import store from './store'
 import global from './common/global/global'
-import ElementUI from 'element-ui'
-
 Vue.prototype.$Global = global
-Vue.use(ElementUI)
+//element-ui
+import {
+  Input,
+  Option,
+  Button,
+  Popover,
+  Tooltip,
+  Card,
+  Carousel,
+  CarouselItem,
+  Image,
+  MessageBox,
+  Message,
+} from 'element-ui';
+
+Vue.use(Input);
+Vue.use(Option);
+Vue.use(Button);
+Vue.use(Popover);
+Vue.use(Tooltip);
+Vue.use(Card);
+Vue.use(Carousel);
+Vue.use(CarouselItem);
+Vue.use(Image);
+
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$alert = MessageBox.alert;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$prompt = MessageBox.prompt;
+Vue.prototype.$message = Message;
+
+import './assets/style/element.scss'
 Vue.config.productionTip = false
 
 new Vue({
