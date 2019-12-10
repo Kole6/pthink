@@ -75,7 +75,7 @@ export default {
       about4: require("@/assets/img/about/about_4.png"),
       about5: require("@/assets/img/about/about_5.png"),
       showAbout1: false,
-      categoryData: ["公司介绍", "公司资质", "战略部署", "战略大事记","战略规划"], //显示右侧列表的内容
+      categoryData: ["公司介绍", "公司资质", "公司战略", "战略大事记","战略规划"], //显示右侧列表的内容
       positionArr: [], //存放右侧列表导航的具体位置
       activeIndex: 0 //当前要到的导航位置
     };
