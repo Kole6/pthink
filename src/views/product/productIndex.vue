@@ -1,16 +1,33 @@
-<!--官网首页-->
+<!--官网产品页-->
 <template>
   <div>
+    <!--产品总页-->
     <template v-if="showCategory">
-      <category @chooseType="handleChoose($event)"></category>
+      <category></category>
     </template>
+    <!--产品内页-->
     <template v-else>
       <div ref="fullpage" v-if="reFresh">
-        <page-content :query="query" v-if="!showSpecialPage"></page-content>
+        <!--一般产品页-->
+        <template v-if="showPageContent">
+          <page-content :query="query"></page-content>
+        </template>
+        <!--特殊产品页-->
         <template v-else>
           <div class="back" @click="$router.go(-1)">返回</div>
-          <div style="text-align:center;">
-            <img :src="imgUrl" alt="" style="width:100%;max-width:1200px;">
+          <div style="max-width:1200px;margin:0 auto;">
+            <el-image :src="imgUrl" @load="loadImgEnd">
+              <div slot="placeholder">
+                <img src="static/loading.gif" alt="load" />
+              </div>
+            </el-image>
+          </div>
+          <div style="max-width:1200px;margin:0 auto;" v-if="imgshow2">
+            <el-image :src="imgUrl2">
+              <div slot="placeholder">
+                <img src="static/loading.gif" alt="load" />
+              </div>
+            </el-image>
           </div>
         </template>
       </div>
@@ -18,93 +35,86 @@
   </div>
 </template>
 <script>
-import page1 from "./productPage1.vue";
-import page2 from "./productPage2.vue";
-import page3 from "./productPage3.vue";
 import category from "./productCategory.vue";
-import pageImg from './productImg.vue'
-import pageContent from './productContent.vue'
+import pageContent from "./productContent.vue";
 export default {
   name: "productIndex",
   components: {
     pageContent,
-    page1,
-    page2,
-    page3,
-    category,
-    pageImg,
+    category
   },
   data() {
     return {
-      imgUrl:'',
-      query:null,
-      showCategory:true,
-      reFresh:true,
-      showSpecialPage:false,
+      imgUrl: "",
+      imgUrl2: "",
+      query: null,
+      showCategory: true,
+      reFresh: true,
+      showPageContent: true,
+      imgshow2: false
     };
   },
-  watch:{
-    '$route':{
-      handler(n,o){
-        // 不携带参数，显示种类   
-        if(Object.keys(n.query).length === 0 || 'load' in n.query){
-          this.showCategory = true;
-        }else{
-          // 携带参数，对参数类型进行判断
-          if( (!!n.query.type || n.query.type === 0)  && !!n.query.name){
-            this.query = n.query;
-            window.scroll(0,0)
-            this.handleChoose(n.query)
-          }
-        }
-      },
-      immediate:true,
+  watch: {
+    $route(to, from) {
+      this.init(to.query);
     }
   },
   methods: {
-    handleChoose(query){
-      // 对单独的页面进行特殊处理            
-      // let arrText = ['智慧立方校园管理','可信教育一证通App']
-      //  可信教育一证通     ||     智慧立方校园管理
-      if((query.type=='0'  && query.name=='C端应用') || (query.type == '5' && query.name == '智慧校园')){
-        if(query.type == '5' && query.name == '智慧校园'){
-          this.imgUrl = 'static/type/special_2.jpg'
-        }else{
-          this.imgUrl = 'static/type/special.jpg'
+    handleChoose(query) {
+      // 特殊页面处理  ['智慧立方校园管理','可信教育一证通App']
+      if (
+        (query.type == "0" && query.name == "C端应用") ||
+        (query.type == "5" && query.name == "智慧校园")
+      ) {
+        this.showPageContent = false;
+        this.imgshow2 = false;
+        if (query.name == "智慧校园") {
+          this.imgUrl = "static/type/special2_1.jpg";
+          this.imgUrl2 = "static/type/special2_2.jpg";
+        } else {
+          this.imgUrl = "static/type/special1_1.jpg";
+          this.imgUrl2 = "static/type/special1_2.jpg";
         }
-        this.showSpecialPage = true;
-      }else{
-        this.showSpecialPage = false;
+      } else {
+        this.showPageContent = true;
       }
-      this.query = query;
-      this.$router.push({path:'/product',query:query})
-      this.showCategory = false;
-      this.handleRefresh();
+      this.$router.push({ path: "/product", query: query });
     },
-    handleRefresh(){
-      this.reFresh=false
-      this.$nextTick(()=>{
-        this.reFresh = true;
-      })
+
+    init(query) {
+      window.scroll(0, 0);
+      if (Object.keys(query).length === 0 || "load" in query) {
+        this.showCategory = true;
+      } else {
+        this.showCategory = false;
+        if ((!!query.type || query.type === 0) && !!query.name) {
+          this.query = query;
+          this.handleChoose(query);
+        }
+      }
+    },
+
+    loadImgEnd() {
+      this.imgshow2 = true;
     }
   },
-  mounted(){
-    window.scrollTo(0,0);
+  created() {
+    this.init(this.$route.query);
   }
 };
 </script>
 <style lang='scss' scoped>
-.back{
-    width: 60px;
-    position: fixed;
-    bottom: 80px;
-    left: 20px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.8;
-    color: white;
-    background: #36eacc;
-    cursor: pointer;
+.back {
+  width: 60px;
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.8;
+  color: white;
+  background: #36eacc;
+  cursor: pointer;
 }
 </style>

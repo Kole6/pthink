@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="page-header">
-      <p>战略规划</p>
+      <p>战略部署</p>
       <p>How can we utilize his knowledge and skill to our advantage</p>
     </div>
     <div class="content">

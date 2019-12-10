@@ -47,7 +47,7 @@ export default {
   name: "researchPage1",
   data() {
     return {
-      placeHolderImg:'/static/image_light.png',
+      placeHolderImg:'static/loading.gif',
       listData:[
         {name:'教育教学咨询',img:require('@/assets/img/research/research_bg1.png')},
         {name:'诊改咨询',img:require('@/assets/img/research/research_bg2.png')},
