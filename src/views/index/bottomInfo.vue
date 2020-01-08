@@ -53,9 +53,10 @@
           <p>上海新朋程数据科技发展有限公司</p>
           <p>COPYRIGHT &copy; Pthink Info CO.All Right Reserved.</p>
         </div>
-        <div>
-          <img src="../../assets/img/img4.png" alt>
-          <img src="../../assets/img/img5.png" alt>
+        <div @click="toBeian" class="beian">
+          <img src="../../assets/img/beian.png" alt>
+          沪ICP备14022503号-2
+          <!-- <img src="../../assets/img/img5.png" alt> -->
         </div>
       </div>
     </div>
@@ -71,6 +72,9 @@ export default {
     handleRouter(query){
       this.$router.push({path:'/product',query})
     },
+    toBeian(){
+      window.open("http://www.beian.miit.gov.cn/")
+    }
   }
 };
 </script>
@@ -192,6 +196,13 @@ export default {
     div:last-child {
       display: flex;
       align-items: center;
+    }
+    .beian{
+      color: #fff;
+      font-size: 14px;
+      img{
+        height: 20px;
+      }
     }
   }
 }
