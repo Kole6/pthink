@@ -35,8 +35,7 @@
         </div>   
         <div class="category">
             <p>大数据技术领域</p>
-            <p>上海市教委信息中心、九次方大数据信息集团、贵州大数据中心。</p>
-            <!-- 上海市教委信息中心、九次方大数据信息集团、贵州大数据中心 -->
+            <p>上海市教委信息中心、贵州大数据中心。</p>
         </div>
         <div class="content">
             <div class="list" v-for="(item,index) in data3" :key="index">
@@ -72,8 +71,7 @@ export default {
             {name:'上海市教育评估院',img:require('@/assets/img/research/cooperative_10.png')},
         ],
         data3:[
-            {name:'上海市教委信息中心',img:require('@/assets/img/research/cooperative_12.png')},
-            {name:'九次方大数据信息集团',img:require('@/assets/img/research/cooperative_11.png')},
+            {name:'上海市教委信息中心',img:require('@/assets/img/research/cooperative_12.png')}
         ],
     };
   }
